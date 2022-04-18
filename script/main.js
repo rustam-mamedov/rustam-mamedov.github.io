@@ -12,6 +12,7 @@
 
     window.user = Moralis.User.current();
     user && (await Moralis.enableWeb3());
+    window.ethereum.on("accountsChanged", logout)
     await refreshMenuButtons();
 
     async function connect() {
